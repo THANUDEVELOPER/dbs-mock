@@ -1,0 +1,183 @@
+<div class="dashboard-wrapper">
+  <div
+    class="dash-sidebar c-scroll-bar"
+    [ngClass]="isCollapsed ? 'col-side-bar' : ''"
+  >
+    <!-- side-bar-box-1 -->
+    <div class="d-s-profile">
+      <div class="profile-img">
+        <img
+          src="../../../assets/images/blank-profile-picture-973460__340.webp"
+        />
+      </div>
+      <div class="profile-name text-small">
+        {{ user?.firstName }}
+        <span [class]="menuText">{{ user?.lastName }}</span>
+      </div>
+    </div>
+    <!-- side-bar-box-2 -->
+    <div class="menu-box">
+      <div [class]="menuType">
+        <div>
+          <i class="fas fa-home"></i>
+          <span [class]="menuText">Home</span>
+        </div>
+      </div>
+      <div [class]="menuType">
+        <div>
+          <i class="fas fa-file-invoice"></i>
+          <span [class]="menuText">Statements</span>
+        </div>
+      </div>
+      <div [class]="menuType">
+        <div>
+          <i class="fas fa-landmark"></i>
+          <span [class]="menuText">Accounts</span>
+        </div>
+      </div>
+
+      <div [class]="menuType">
+        <div>
+          <i class="fas fa-hands-helping"></i>
+          <span [class]="menuText">Help & Support</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- side-bar-box-3 -->
+    <div class="menu-type" [class]="menuType" (click)="logout()">
+      <div>
+        <i class="fas fa-sign-out-alt"></i>
+        <span [class]="menuText">Logout</span>
+      </div>
+    </div>
+
+    <div class="bank-logo" [class]="menuText">
+      <img src="../../../assets/images/digibank.webp" />
+    </div>
+  </div>
+  <div class="dash-cont-wrapper" [ngClass]="isCollapsed ? 'dash-collapse' : ''">
+    <div class="d-c-header">
+      <button
+        class="btn collaspe-btn"
+        [ngClass]="isCollapsed ? 'btn-rotate' : ''"
+        (click)="collapseMenu()"
+      >
+        <i class="fas fa-align-left"></i>
+      </button>
+      <div class="header-content">
+        <div class="h-back"><i class="fas fa-angle-left"></i> Back</div>
+        <div class="h-title"><div>Home</div></div>
+      </div>
+    </div>
+    <div class="d-c-container c-scroll-bar">
+      <div class="d-c-detail-bar">
+        <div class="d-bar-card-1">
+          <div class="card-1-icon">
+            <i class="fas fa-landmark"></i>
+          </div>
+          <div>
+            <div class="text-mid">DigiSaving</div>
+            <div>DigiSaving</div>
+            <div>{{ user.accountNumber }}</div>
+          </div>
+        </div>
+        <div class="d-bar-card-2">
+          <div class="a-bal">Available balance</div>
+          <div class="text-mid">
+            {{ user.currentBalance | currency: "INR":"symbol" }}
+          </div>
+          <div>
+            <button class="btn fund-btn">Transfer fund</button>
+          </div>
+        </div>
+      </div>
+
+      <nz-tabset>
+        <nz-tab nzTitle="Transaction History"
+          ><div class="d-tab-1">
+            <div>
+              <nz-range-picker
+                [(ngModel)]="date"
+                (ngModelChange)="onChange($event)"
+              ></nz-range-picker>
+              <span class="download-text lite"> Download as</span>
+              <button class="download-btn">
+                <i class="fas fa-download"></i> .PDF
+              </button>
+              <button class="download-btn">
+                <i class="fas fa-download"></i> .CSV
+              </button>
+            </div>
+            <div class="trans-details">
+              <div class="date-text lite">31 july</div>
+              <div class="transaction-bar">
+                <div class="t-b-left-box">
+                  <div>
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                    <i class="fas fa-long-arrow-alt-down"></i>
+                  </div>
+                  <div>
+                    <div class="trans-his-name bold">Transaction</div>
+                    <div class="lite">from 08997879</div>
+                  </div>
+                </div>
+                <div class="t-b-right-box">
+                  <div>
+                    <div class="credit">+1000.00</div>
+                    <div class="debit">-1000.00</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div></nz-tab
+        >
+        <nz-tab nzTitle="Debit card"><div class="d-tab"></div></nz-tab>
+        <nz-tab nzTitle="Future payments"><div class="d-tab"></div></nz-tab>
+        <nz-tab nzTitle="eStatements"><div class="d-tab"></div></nz-tab>
+        <nz-tab nzTitle="Account Details"
+          ><div class="d-tab-5">
+            <div class="acc-details-card">
+              <table>
+                <tr>
+                  <td class="acc-title">Account name</td>
+                  <td class="acc-value">{{ user.accountName }}</td>
+                </tr>
+                <tr>
+                  <td class="acc-title">Account number</td>
+                  <td class="acc-value">{{ user.accountNumber }}</td>
+                </tr>
+                <tr>
+                  <td class="acc-title">MMID</td>
+                  <td class="acc-value">{{ user.mmid }}</td>
+                </tr>
+                <tr>
+                  <td class="acc-title">Bank name</td>
+                  <td class="acc-value">{{ user.bankName }}</td>
+                </tr>
+                <tr>
+                  <td class="acc-title">IFSC code</td>
+                  <td class="acc-value">{{ user.ifscCode }}</td>
+                </tr>
+                <tr>
+                  <td class="acc-title">VPA</td>
+                  <td class="acc-value">{{ user.vpa }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </nz-tab>
+      </nz-tabset>
+      <div class="d-c-footer-bar">
+        DBS Bank India Limited (DBIL) or its employees will never call you & ask
+        for your personal details nor email you any clickable link to update
+        your personal or sensitive information. If you receive such links
+        claiming to be from DBS Bank or any other unknown source , please do not
+        click on those clickable links. Never share any Passwords /OTPs/ PIN /
+        Card details like CVV , Expiry date with anyone, even if they claim to
+        be from the DBS Bank or its affiliates/Partners or RBI / other
+        Regulatory bodies.
+      </div>
+    </div>
+  </div>
+</div>

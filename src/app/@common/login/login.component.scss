@@ -1,0 +1,132 @@
+@import "../../../assets/scss/variables.scss";
+.login-wrapper {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../../assets/images/morning.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .login-bod {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.445),
+      rgba(0, 0, 0, 0) 70%,
+      rgb(0, 0, 0)
+    );
+  }
+  .login-w-header {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+  }
+  .header-text {
+    width: 82%;
+    color: $white-color;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .bold-text {
+    font-weight: 550;
+    font-size: 16px;
+    color: $white-color;
+    cursor: pointer;
+  }
+  .header-help {
+    padding-top: 10px;
+    .fa-info-circle {
+      font-size: 18px;
+    }
+  }
+  .login-w-content {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .login-w-box {
+    width: 310px;
+    height: 400px;
+    background-color: #f7f5f2;
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.13);
+    border-top: 4px solid $secondary-color;
+    padding: 20px;
+  }
+  .login-b-title {
+    text-align: center;
+    img {
+      height: 27px;
+    }
+  }
+  .input-fields {
+    margin-top: 20px;
+  }
+  .terms {
+    font-size: 12px;
+  }
+  .terms-click {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .login-btn {
+    box-shadow: none;
+    background-color: $primary-color;
+    color: $white-color;
+    font-weight: $font-weight-btn;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    &:hover {
+      background-color: $btn-hover-color;
+    }
+  }
+  .login-b-footer {
+    opacity: 0.8;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .forgot-pass {
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  .d-c-apps {
+    width: 310px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .d-c-text {
+    color: $white-color;
+    font-weight: 500;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .app-icon {
+    img {
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+  .login-w-footer {
+    margin-top: 15px;
+    color: $white-color;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .login-footer-cont {
+    display: flex;
+    gap: 30px;
+    font-size: 13px;
+    opacity: 0.7;
+    cursor: pointer;
+    .fab {
+      font-size: 16px;
+    }
+  }
+}

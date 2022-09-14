@@ -1,0 +1,94 @@
+<div class="login-wrapper">
+  <div class="login-bod">
+    <div class="login-w-header">
+      <div class="header-text">
+        DBS Bank India Limited (DBIL) or its employees will never call you & ask
+        for your personal details nor email you any clickable link to update
+        your personal or sensitive information. If you receive such links
+        claiming to be from DBS Bank or any other unknown source , please do not
+        click on those clickable links. Never share any Passwords /OTPs/ PIN /
+        Card details like CVV , Expiry date with anyone, even if they claim to
+        be from the DBS Bank or its affiliates/Partners or RBI / other
+        Regulatory bodies.
+        <div>Learn more <span class="bold-text">here</span></div>
+      </div>
+      <div class="header-help bold-text">
+        <i class="fas fa-info-circle"></i> Help & support
+      </div>
+    </div>
+    <div class="login-w-content">
+      <div class="login-w-main">
+        <div class="login-w-box">
+          <div class="login-b-title">
+            <img src="../../../assets/images/digibank.webp" />
+          </div>
+          <form>
+            <div class="row input-fields">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Username</mat-label>
+                <input matInput name="username" [(ngModel)]="uName" />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input
+                  type="password"
+                  matInput
+                  name="pssword"
+                  [(ngModel)]="pass"
+                />
+              </mat-form-field>
+            </div>
+            <div class="terms">
+              By logging in, you agree to our
+              <span class="terms-click">Terms & Conditions</span>
+            </div>
+          </form>
+          <button class="btn login-btn" (click)="login()">Login</button>
+          <div class="login-b-footer">
+            <div class="forgot-pass">Forgot Username or Password</div>
+            Get your loved ones to experience digibank and earn upto Rs 5000
+            every month! Know more
+          </div>
+        </div>
+        <div class="download-content">
+          <div class="d-c-text">
+            New to digibank? <br />
+            Download the app and register now!
+          </div>
+          <div class="d-c-apps">
+            <div class="app-icon">
+              <img src="../../../assets/images/img_appstore.webp" />
+            </div>
+            <div class="app-icon">
+              <img src="../../../assets/images/img_playstore.webp" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="login-w-footer">
+      <div class="login-footer-cont">
+        <div>Terms & Conditions</div>
+        <div>Privacy Policy</div>
+        <div>Cyber Security</div>
+        <div>Vulnerability Disclosure Policy</div>
+        <div>|</div>
+        <div>© Copyright 2017. DBS Bank</div>
+      </div>
+      <div class="login-footer-cont">
+        <div>
+          <i class="fab fa-facebook-f"></i>
+        </div>
+        <div>
+          <i class="fab fa-twitter"></i>
+        </div>
+        <div>
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <div>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

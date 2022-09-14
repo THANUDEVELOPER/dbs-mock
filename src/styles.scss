@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@import "/src/assets/scss/variables.scss";
+.lite {
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.6;
+}
+.text-small {
+  font-size: 13px;
+  font-weight: 500;
+}
+.bold {
+  font-weight: 500;
+}
+.text-mid {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+}
+// ant design tab for home
+.home-content {
+  .ant-tabs-top > .ant-tabs-nav::before,
+  .ant-tabs-bottom > .ant-tabs-nav::before,
+  .ant-tabs-top > div > .ant-tabs-nav::before,
+  .ant-tabs-bottom > div > .ant-tabs-nav::before {
+    border-bottom: none;
+    content: "";
+  }
+  .ant-tabs-tab {
+    font-size: 15px;
+    font-weight: $font-weight-btn;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    color: $tab-color;
+    padding: 18px 0px;
+  }
+
+  .ant-tabs-tab:hover {
+    color: $primary-color;
+  }
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: $primary-color;
+  }
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0 0 0 0px;
+  }
+  .ant-tabs-ink-bar {
+    background: $primary-color;
+  }
+  .ant-tabs-bottom > .ant-tabs-nav .ant-tabs-ink-bar,
+  .ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-ink-bar {
+    top: auto;
+    bottom: 0 !important;
+    height: 4px;
+  }
+  .ant-tabs > .ant-tabs-nav .ant-tabs-nav-operations,
+  .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-operations {
+    // to remove overflow of tab
+    display: none;
+  }
+  .ant-tabs-bottom > .ant-tabs-nav,
+  .ant-tabs-bottom > div > .ant-tabs-nav {
+    order: 1;
+    margin-top: 0px;
+    margin-bottom: 0;
+  }
+}
+//   mat - input
+.login-wrapper {
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: $white-color;
+  }
+  .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: $secondary-color !important;
+  }
+
+  .mat-form-field-underline {
+    /*change color of underline*/
+    background-color: $secondary-color !important;
+  }
+
+  .mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: $secondary-color !important;
+  }
+}
+.dashboard-wrapper {
+  // ant design sidebar
+  .ant-menu.ant-menu-dark,
+  .ant-menu-dark .ant-menu-sub,
+  .ant-menu.ant-menu-dark .ant-menu-sub {
+    color: $side-bar-color;
+    background: #ffffff00;
+  }
+  .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal)
+    .ant-menu-item-selected {
+    background-color: #00000011;
+  }
+  // ant design tab for dashboard
+  .ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap,
+  .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-wrap {
+    background: $white-color;
+    padding-left: 7%;
+  }
+  .ant-tabs-tab:hover {
+    color: $secondary-color;
+  }
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: black;
+  }
+
+  .ant-tabs-ink-bar {
+    background: $secondary-color;
+  }
+  .ant-tabs-tab {
+    font-size: 13px;
+    font-weight: $font-weight-btn;
+  }
+  .ant-tabs-content-holder {
+    padding: 10px 7% 10px 7%;
+  }
+}

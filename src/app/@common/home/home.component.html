@@ -1,0 +1,42 @@
+<div class="home-wrapper">
+  <div class="home-header">
+    <div class="header-content">
+      <div class="logo">
+        <img src="../../../assets/images/dbs_logo.svg" />
+      </div>
+      <div class="login-ctrl">
+        <button class="btn login-btn" (click)="navigate('/login')">
+          <i class="fas fa-lock"></i> Login
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="home-content">
+    <nz-tabset nzTabPosition="bottom" nzCentered>
+      <nz-tab *ngFor="let tab of tabList" [nzTitle]="tab.title"
+        ><div class="home-tab-container tab-1">
+          <div class="welcome-title">
+            Welcome to DBS Bank India
+            <div class="wel-sub-text">Asia's Safest Bank for 13 years.</div>
+            <div class="wel-ctrl">
+              <button class="btn learn-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="tab-1-footer">
+            <div class="tab-1-f-content">
+              <div class="t-1-f-box" *ngFor="let i of content">
+                <div class="f-box-img">
+                  <img [src]="i.img" />
+                </div>
+                <div class="f-box-text">
+                  <div class="f-b-text-bold">{{ i.text }}</div>
+                  <div>{{ i.subText }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>
